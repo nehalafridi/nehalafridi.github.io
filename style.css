@@ -2940,7 +2940,355 @@ main > .section > .section-container {
 
     outline: none !important;
 }
+/* =========================================================
+   FINAL MOBILE NAVIGATION FIX
+   ========================================================= */
 
+@media (max-width: 800px) {
+
+    /* ---------- HEADER ---------- */
+
+    .site-header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+
+        width: 100% !important;
+        height: 68px !important;
+
+        padding: 0 20px !important;
+
+        display: flex !important;
+        align-items: center !important;
+
+        background: rgba(4, 7, 12, 0.96) !important;
+
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        z-index: 99999 !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* ---------- LOGO ---------- */
+
+    .site-header .logo {
+        display: block !important;
+
+        font-size: 28px !important;
+        font-weight: 850 !important;
+
+        line-height: 1 !important;
+
+        text-decoration: none !important;
+    }
+
+
+    /* ---------- HAMBURGER BUTTON ---------- */
+
+    .site-header .menu-toggle {
+        display: flex !important;
+
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        width: 46px !important;
+        height: 46px !important;
+
+        margin-left: auto !important;
+
+        padding: 0 !important;
+
+        border: 1px solid rgba(255,255,255,0.12) !important;
+        border-radius: 12px !important;
+
+        background: rgba(255,255,255,0.04) !important;
+
+        cursor: pointer !important;
+
+        z-index: 100001 !important;
+    }
+
+
+    .site-header .menu-toggle span {
+        display: block !important;
+
+        width: 20px !important;
+        height: 2px !important;
+
+        margin: 3px 0 !important;
+
+        background: #ffffff !important;
+
+        border-radius: 10px !important;
+    }
+
+
+    /* ---------- MOBILE MENU ---------- */
+
+    .site-header .site-nav {
+        position: absolute !important;
+
+        top: 68px !important;
+        left: 0 !important;
+        right: 0 !important;
+
+        width: 100% !important;
+
+        display: none !important;
+
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+
+        gap: 0 !important;
+
+        padding: 10px 16px 16px !important;
+
+        margin: 0 !important;
+
+        background: rgba(4, 7, 12, 0.98) !important;
+
+        border-top: 1px solid rgba(255,255,255,0.05) !important;
+        border-bottom: 1px solid rgba(255,255,255,0.10) !important;
+
+        box-shadow: 0 18px 35px rgba(0,0,0,0.35) !important;
+
+        box-sizing: border-box !important;
+
+        z-index: 100000 !important;
+    }
+
+
+    /* OPEN MENU */
+
+    .site-header .site-nav.open {
+        display: flex !important;
+    }
+
+
+    /* ---------- MENU LINKS ---------- */
+
+    .site-header .site-nav a {
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        width: 100% !important;
+
+        min-height: 48px !important;
+
+        margin: 2px 0 !important;
+
+        padding: 12px 16px !important;
+
+        box-sizing: border-box !important;
+
+        color: #e8edf4 !important;
+
+        background: transparent !important;
+
+        border: 1px solid transparent !important;
+        border-radius: 10px !important;
+
+        font-size: 15px !important;
+        font-weight: 700 !important;
+
+        text-decoration: none !important;
+
+        transform: none !important;
+
+        box-shadow: none !important;
+    }
+
+
+    /* HOVER / TAP */
+
+    .site-header .site-nav a:hover,
+    .site-header .site-nav a:active {
+        color: #ffffff !important;
+
+        background: rgba(21,151,255,0.10) !important;
+
+        border-color: rgba(21,151,255,0.30) !important;
+
+        transform: none !important;
+    }
+
+
+    /* ACTIVE SECTION */
+
+    .site-header .site-nav a.active {
+        color: #ffffff !important;
+
+        background: rgba(21,151,255,0.14) !important;
+
+        border: 1px solid rgba(21,151,255,0.45) !important;
+
+        box-shadow: 0 0 15px rgba(21,151,255,0.10) !important;
+    }
+
+
+    /* REMOVE OLD DOT */
+
+    .site-header .site-nav a.active::after {
+        display: none !important;
+        content: none !important;
+    }
+
+
+    /* ---------- HIDE DESKTOP CONNECT BUTTON ---------- */
+
+    .site-header .header-button {
+        display: none !important;
+    }
+
+
+    /* ---------- MOBILE SECTIONS ---------- */
+
+    main > .section {
+        width: 100% !important;
+
+        min-height: auto !important;
+
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    #about,
+    #education,
+    #skills,
+    #projects,
+    #certificates,
+    #contact {
+        scroll-margin-top: 72px !important;
+    }
+
+
+    /* ---------- MOBILE SECTION TITLES ---------- */
+
+    .section-title {
+        font-size: clamp(34px, 9vw, 44px) !important;
+
+        line-height: 1.08 !important;
+
+        letter-spacing: -1.5px !important;
+    }
+
+
+    /* ---------- MOBILE GRIDS ---------- */
+
+    .about-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .highlight-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .certificate-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+
+    /* ---------- MOBILE CARDS ---------- */
+
+    .highlight-card,
+    .education-card,
+    .skill-card,
+    .project-card,
+    .certificate-card,
+    .contact-card {
+        width: 100% !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* ---------- PROJECT BUTTONS ---------- */
+
+    .project-card a,
+    .project-card .btn {
+        max-width: 100% !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* ---------- HERO BUTTONS ---------- */
+
+    .hero-buttons {
+        flex-direction: column !important;
+
+        align-items: stretch !important;
+
+        width: 100% !important;
+
+        gap: 12px !important;
+    }
+
+
+    .hero-buttons .btn {
+        width: 100% !important;
+
+        min-width: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .site-header {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    .site-header .logo {
+        font-size: 26px !important;
+    }
+
+    .site-header .menu-toggle {
+        width: 44px !important;
+        height: 44px !important;
+    }
+
+    main > .section {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    .section-title {
+        font-size: 34px !important;
+    }
+
+}
 
 /* =========================================================
    RESPONSIVE
