@@ -17,22 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
        SHOW NAVIGATION AFTER HOME
     ========================================= */
 
-    function updateHeader() {
+   function updateHeader() {
 
-        if (!header) return;
+    if (!header) return;
 
-        const about = document.getElementById("about");
-
-        if (!about) return;
-
-        const aboutTop = about.offsetTop;
-
-        if (window.scrollY >= aboutTop - 100) {
-            header.classList.add("visible");
-        } else {
-            header.classList.remove("visible");
-        }
-    }
+    header.classList.add("visible");
+}
 
 
     window.addEventListener(
