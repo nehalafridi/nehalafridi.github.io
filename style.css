@@ -4841,3 +4841,15 @@ main > .section > .section-container {
     }
 
 }
+/* =========================================
+   KEEP NAVIGATION VISIBLE FROM HOME
+   ========================================= */
+
+.site-header,
+#siteHeader {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+    transform: none !important;
+    pointer-events: auto !important;
+}
