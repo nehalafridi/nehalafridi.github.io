@@ -3899,3 +3899,410 @@ main > .section > .section-container {
 .cv-button:active {
     transform: translateY(-1px) scale(0.98);
 }
+/* =========================================================
+   FINAL MOBILE FIX
+   Keep the desktop design intact
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    /* -----------------------------------------
+       MOBILE HEADER
+       ----------------------------------------- */
+
+    .site-header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+
+        width: 100% !important;
+        height: 68px !important;
+
+        padding: 0 20px !important;
+
+        display: flex !important;
+        align-items: center !important;
+
+        background: rgba(4, 7, 12, 0.96) !important;
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        z-index: 99999 !important;
+    }
+
+
+    /* -----------------------------------------
+       LOGO
+       ----------------------------------------- */
+
+    .site-header .logo {
+        display: block !important;
+        font-size: 28px !important;
+        line-height: 1 !important;
+    }
+
+
+    /* -----------------------------------------
+       HAMBURGER
+       ----------------------------------------- */
+
+    .menu-toggle {
+        display: flex !important;
+
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+
+        gap: 4px !important;
+
+        width: 44px !important;
+        height: 44px !important;
+
+        margin-left: auto !important;
+
+        padding: 0 !important;
+
+        background: rgba(255,255,255,0.03) !important;
+
+        border: 1px solid rgba(255,255,255,0.12) !important;
+        border-radius: 11px !important;
+
+        cursor: pointer !important;
+    }
+
+
+    .menu-toggle span {
+        display: block !important;
+
+        width: 20px !important;
+        height: 2px !important;
+
+        margin: 0 !important;
+
+        background: #ffffff !important;
+
+        border-radius: 5px !important;
+    }
+
+
+    /* -----------------------------------------
+       MOBILE NAVIGATION
+       ----------------------------------------- */
+
+    .site-nav,
+    #siteNav {
+        position: absolute !important;
+
+        top: 68px !important;
+        left: 14px !important;
+        right: 14px !important;
+
+        width: auto !important;
+        height: auto !important;
+
+        min-height: 0 !important;
+        max-height: none !important;
+
+        display: none !important;
+
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+
+        gap: 4px !important;
+
+        padding: 10px !important;
+
+        background: rgba(4, 7, 12, 0.98) !important;
+
+        border: 1px solid rgba(255,255,255,0.09) !important;
+        border-radius: 14px !important;
+
+        box-shadow:
+            0 20px 50px rgba(0,0,0,0.45) !important;
+
+        overflow: hidden !important;
+    }
+
+
+    .site-nav.open,
+    #siteNav.open {
+        display: flex !important;
+    }
+
+
+    /* -----------------------------------------
+       MENU LINKS
+       ----------------------------------------- */
+
+    .site-nav a,
+    #siteNav a {
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+
+        height: 46px !important;
+
+        padding: 0 15px !important;
+
+        margin: 0 !important;
+
+        font-size: 15px !important;
+        font-weight: 700 !important;
+
+        color: #dce4ed !important;
+
+        background: transparent !important;
+
+        border: 1px solid transparent !important;
+        border-radius: 9px !important;
+
+        transform: none !important;
+    }
+
+
+    .site-nav a:hover,
+    #siteNav a:hover {
+        color: #ffffff !important;
+
+        background: rgba(21,151,255,0.10) !important;
+
+        border-color: rgba(21,151,255,0.25) !important;
+    }
+
+
+    .site-nav a.active,
+    #siteNav a.active {
+        color: #ffffff !important;
+
+        background: rgba(21,151,255,0.14) !important;
+
+        border-color: rgba(21,151,255,0.45) !important;
+
+        box-shadow: none !important;
+    }
+
+
+    .site-nav a.active::after,
+    #siteNav a.active::after {
+        display: none !important;
+    }
+
+
+    /* -----------------------------------------
+       HIDE DESKTOP CONNECT BUTTON
+       ----------------------------------------- */
+
+    .header-button {
+        display: none !important;
+    }
+
+
+    /* -----------------------------------------
+       IMPORTANT:
+       KEEP THE ORIGINAL COVER PAGE
+       ----------------------------------------- */
+
+    #home,
+    .cover-section {
+        position: relative !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        overflow: hidden !important;
+    }
+
+
+    .cover-wrapper {
+        position: relative !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        height: auto !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+
+    .cover-image {
+        display: block !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        height: auto !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        object-fit: contain !important;
+
+        transform: none !important;
+    }
+
+
+    /* -----------------------------------------
+       KEEP COVER HOTSPOTS WORKING
+       ----------------------------------------- */
+
+    .cover-hotspots {
+        position: absolute !important;
+
+        inset: 0 !important;
+
+        width: 100% !important;
+        height: 100% !important;
+
+        pointer-events: none !important;
+    }
+
+
+    .cover-hotspots .hotspot {
+        pointer-events: auto !important;
+
+        background: transparent !important;
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+
+        -webkit-tap-highlight-color: transparent !important;
+    }
+
+
+    /* -----------------------------------------
+       MOBILE SECTIONS
+       ----------------------------------------- */
+
+    main > .section {
+        min-height: auto !important;
+
+        padding-top: 85px !important;
+        padding-right: 20px !important;
+        padding-bottom: 70px !important;
+        padding-left: 20px !important;
+    }
+
+
+    section[id] {
+        scroll-margin-top: 75px !important;
+    }
+
+
+    /* -----------------------------------------
+       ABOUT
+       ----------------------------------------- */
+
+    .about-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+
+
+    /* -----------------------------------------
+       SKILLS
+       ----------------------------------------- */
+
+    .skills-grid {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+    }
+
+
+    /* -----------------------------------------
+       PROJECTS
+       ----------------------------------------- */
+
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+
+    /* -----------------------------------------
+       CERTIFICATES
+       ----------------------------------------- */
+
+    .certificate-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+
+    /* -----------------------------------------
+       CONTACT
+       ----------------------------------------- */
+
+    .contact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+
+
+    /* -----------------------------------------
+       EDUCATION
+       ----------------------------------------- */
+
+    .education-card {
+        grid-template-columns: 1fr !important;
+
+        gap: 16px !important;
+
+        padding: 24px !important;
+    }
+
+
+    /* -----------------------------------------
+       HEADINGS
+       ----------------------------------------- */
+
+    .section-title {
+        font-size: 38px !important;
+
+        line-height: 1.08 !important;
+
+        letter-spacing: -1.5px !important;
+
+        margin-bottom: 30px !important;
+    }
+
+
+    /* -----------------------------------------
+       HOME BUTTONS
+       ----------------------------------------- */
+
+    .hero-buttons {
+        flex-direction: column !important;
+
+        align-items: stretch !important;
+
+        width: 100% !important;
+
+        gap: 12px !important;
+    }
+
+
+    .hero-buttons .btn {
+        width: 100% !important;
+
+        min-width: 0 !important;
+
+        min-height: 52px !important;
+    }
+
+}
