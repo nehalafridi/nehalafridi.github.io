@@ -4854,3 +4854,14 @@ main > .section > .section-container {
     transform: none !important;
     pointer-events: auto !important;
 }
+/* =========================================================
+   FINAL FIX — KEEP COVER CONTENT BELOW FIXED HEADER
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .cover-section {
+        padding-top: 82px !important;
+    }
+
+}
