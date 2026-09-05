@@ -4992,3 +4992,33 @@ main > .section > .section-container {
         margin-left: auto !important;
     }
 }
+/* =========================================================
+   FINAL FIX — REMOVE GAP ABOVE HOME COVER ON MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .home-section {
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .cover-stage {
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    .cover-image {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
