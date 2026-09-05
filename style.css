@@ -4930,3 +4930,65 @@ main > .section > .section-container {
         margin-left: auto !important;
     }
 }
+/* =========================================================
+   FINAL FIX — TRANSPARENT MOBILE NAVIGATION
+   ========================================================= */
+
+.site-header {
+    border-bottom: none !important;
+    box-shadow: none !important;
+    background: rgba(3, 7, 13, 0.25) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+@media (max-width: 700px) {
+
+    #siteHeader,
+    .site-header {
+        position: fixed !important;
+
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+
+        width: 100% !important;
+        height: 70px !important;
+        min-height: 70px !important;
+
+        padding: 0 16px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        flex-wrap: nowrap !important;
+
+        background: rgba(3, 7, 13, 0.20) !important;
+
+        border: none !important;
+        border-bottom: none !important;
+
+        box-shadow: none !important;
+
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+
+        z-index: 99999 !important;
+    }
+
+    /* Keep the cover visible underneath the navigation */
+    #home {
+        padding-top: 0 !important;
+    }
+
+    /* Logo stays on the left */
+    #siteHeader .logo,
+    .site-header .logo {
+        margin: 0 !important;
+    }
+
+    /* Hamburger stays on the right */
+    #siteHeader .menu-toggle,
+    .site-header .menu-toggle {
+        margin-left: auto !important;
+    }
+}
