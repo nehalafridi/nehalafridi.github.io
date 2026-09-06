@@ -5047,7 +5047,7 @@ main > .section > .section-container {
     .home-section {
         height: auto !important;
         min-height: 0 !important;
-        overflow: hidden;
+        overflow: visible !important;
         padding: 0 !important;
         margin: 0 !important;
     }
@@ -5055,7 +5055,7 @@ main > .section > .section-container {
     .cover-stage {
         width: 100%;
         height: auto !important;
-        overflow: hidden;
+        overflow: visible !important;
         position: relative;
     }
 
@@ -5064,8 +5064,8 @@ main > .section > .section-container {
         width: 100%;
         height: auto !important;
         max-width: none;
-        transform: translateY(-7.5%);
-        margin-bottom: -7.5%;
+        transform: none;
+        margin-bottom: 0;
     }
 
     /* Don't show the old invisible navigation hotspots */
