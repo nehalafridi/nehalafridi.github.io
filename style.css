@@ -5188,3 +5188,49 @@ main > .section > .section-container {
     box-shadow: none !important;
     color: transparent !important;
 }
+/* =========================================================
+   REMOVE DUPLICATE TOP HEADER FROM DESKTOP COVER
+   ========================================================= */
+
+@media (min-width: 801px) {
+
+    /* Remove the unwanted duplicate navigation/header */
+    .site-header {
+        display: none !important;
+    }
+
+    /* Let the original cover image occupy the desktop screen */
+    .home-section {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+    }
+
+    .cover-stage {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        position: relative !important;
+        overflow: visible !important;
+    }
+
+    .cover-image {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+        object-fit: contain !important;
+        object-position: top center !important;
+    }
+
+    /* Keep the navigation/buttons already printed
+       inside cover-page.png invisible as HTML overlays */
+    .cover-hotspots .hotspot {
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+}
