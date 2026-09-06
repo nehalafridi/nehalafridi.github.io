@@ -1,16 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    /* ===============================
+       MOBILE MENU
+    =============================== */
+
     const menuToggle = document.getElementById("menuToggle");
     const siteNav = document.getElementById("siteNav");
-    const siteHeader = document.getElementById("siteHeader");
-
-    /* =========================
-       MOBILE MENU
-    ========================= */
 
     if (menuToggle && siteNav) {
 
-        menuToggle.addEventListener("click", function () {
+        menuToggle.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
 
             siteNav.classList.toggle("open");
 
@@ -28,9 +29,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
-        /* Close menu after clicking a navigation link */
+        /* Close menu when a navigation link is clicked */
 
-        siteNav.querySelectorAll("a").forEach(function (link) {
+        const mobileLinks = siteNav.querySelectorAll("a");
+
+        mobileLinks.forEach(function (link) {
 
             link.addEventListener("click", function () {
 
@@ -50,22 +53,51 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
+
+        /* Close menu when clicking outside */
+
+        document.addEventListener("click", function (e) {
+
+            if (
+                siteNav.classList.contains("open") &&
+                !siteNav.contains(e.target) &&
+                !menuToggle.contains(e.target)
+            ) {
+
+                siteNav.classList.remove("open");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuToggle.setAttribute(
+                    "aria-label",
+                    "Open menu"
+                );
+
+            }
+
+        });
+
     }
 
 
-    /* =========================
+    /* ===============================
        SMOOTH NAVIGATION
-    ========================= */
+    =============================== */
 
-    const navLinks = document.querySelectorAll(".site-nav a");
+    const navLinks = document.querySelectorAll(
+        ".site-nav a[href^='#']"
+    );
 
     navLinks.forEach(function (link) {
 
-        link.addEventListener("click", function (event) {
+        link.addEventListener("click", function (e) {
 
             const targetId = link.getAttribute("href");
 
-            if (!targetId || !targetId.startsWith("#")) {
+            if (!targetId || targetId === "#") {
                 return;
             }
 
@@ -75,19 +107,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-            event.preventDefault();
+            e.preventDefault();
 
-            const headerHeight =
-                siteHeader ? siteHeader.offsetHeight : 0;
-
-            const targetPosition =
-                target.getBoundingClientRect().top +
-                window.scrollY -
-                headerHeight;
-
-            window.scrollTo({
-                top: targetPosition,
-                behavior: "smooth"
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
             });
 
         });
@@ -95,72 +119,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* =========================
-       ACTIVE NAVIGATION
-    ========================= */
-
-    const sections = document.querySelectorAll("main section");
-
-    function updateActiveNavigation() {
-
-        let currentSection = "home";
-
-        const scrollPosition =
-            window.scrollY +
-            (siteHeader ? siteHeader.offsetHeight : 0) +
-            100;
-
-        sections.forEach(function (section) {
-
-            if (
-                scrollPosition >= section.offsetTop &&
-                scrollPosition <
-                    section.offsetTop + section.offsetHeight
-            ) {
-
-                currentSection = section.id;
-
-            }
-
-        });
-
-        navLinks.forEach(function (link) {
-
-            link.classList.remove("active");
-
-            if (
-                link.getAttribute("href") ===
-                "#" + currentSection
-            ) {
-
-                link.classList.add("active");
-
-            }
-
-        });
-
-    }
-
-    window.addEventListener(
-        "scroll",
-        updateActiveNavigation,
-        { passive: true }
-    );
-
-    updateActiveNavigation();
-
-
-    /* =========================
+    /* ===============================
        LOGO → HOME
-    ========================= */
+    =============================== */
 
     const logo = document.querySelector(".site-header .logo");
 
     if (logo) {
 
-        logo.addEventListener("click", function (event) {
+        logo.addEventListener("click", function (e) {
 
-            event.preventDefault();
+            e.preventDefault();
 
             window.scrollTo({
                 top: 0,
