@@ -5094,3 +5094,32 @@ main > .section > .section-container {
 
 }
 
+@media (min-width: 801px) {
+
+    .home-section {
+        overflow: visible !important;
+    }
+
+    .cover-stage {
+        overflow: visible !important;
+    }
+
+    .cover-image {
+        display: block;
+        width: 100%;
+        height: auto !important;
+        max-width: none;
+        transform: none;
+        margin-bottom: 0;
+    }
+
+    .nav-home,
+    .nav-about,
+    .nav-education,
+    .nav-skills,
+    .nav-projects,
+    .nav-certificates,
+    .nav-contact {
+        display: none !important;
+    }
+}
