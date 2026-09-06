@@ -1479,42 +1479,8 @@ footer {
         font-size: 26px !important;
     }
 }
-/* =========================================
-   MOBILE HEADER FIX
-   ========================================= */
-
 @media (max-width: 768px) {
-
-    /* Keep the mobile header above everything */
-    .site-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 130px;
-        z-index: 9999;
-        background: #07090f;
-    }
-
-    /* Prevent website content from going underneath header */
-    main {
-        padding-top: 130px;
-    }
-
-    /* Mobile navigation button stays visible */
-    #menuToggle {
-        position: relative;
-        z-index: 10001;
-    }
-
-    /* Mobile menu stays above the page */
-    #siteNav {
-        z-index: 10000;
-    }
-
-    /* Don't allow hero content to hide underneath header */
     .hero {
-        position: relative;
-        z-index: 1;
+        margin-top: 80px;
     }
 }
