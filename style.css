@@ -1613,3 +1613,29 @@ footer {
     }
 
 }
+/* =========================================================
+   MOBILE — MOVE COVER BELOW FIXED NAVBAR
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    /* Push the entire cover below the 68px mobile navbar */
+    #home.cover-section {
+        margin-top: 68px !important;
+    }
+
+    /* Keep the cover itself unchanged */
+    #home .cover-wrapper {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    #home .cover-image {
+        margin-top: 0 !important;
+    }
+
+    /* Reduce the empty space after the cover */
+    #about {
+        padding-top: 25px !important;
+    }
+}
