@@ -14,7 +14,7 @@
     --text: #dce4ed;
     --muted: #9ba8b8;
     --muted-dark: #6f7d8f;
-
+ 
     --border: rgba(255,255,255,0.10);
     --border-blue: rgba(21,151,255,0.40);
 
@@ -1574,4 +1574,15 @@ footer {
         margin-top: 0 !important;
         padding-top: 75px !important;
     }
+}
+/* =========================================================
+   MOBILE COVER POSITION FIX
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .cover-section {
+        margin-top: 68px;
+    }
+
 }
