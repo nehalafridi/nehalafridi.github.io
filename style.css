@@ -5123,3 +5123,68 @@ main > .section > .section-container {
         display: none !important;
     }
 }
+/* =========================================================
+   FINAL DESKTOP COVER FIX
+   ========================================================= */
+
+/* Hide the secondary/fixed navigation while viewing cover */
+.site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+
+    transform: translateY(-120%);
+    opacity: 0;
+    visibility: hidden;
+
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Show it only after scrolling */
+.site-nav.visible {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Keep the ORIGINAL cover completely visible */
+.home-section {
+    width: 100%;
+    min-height: 100vh;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+}
+
+.cover-stage {
+    width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+    display: block !important;
+    position: relative;
+}
+
+.cover-image {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    max-width: 100%;
+    object-fit: contain !important;
+    object-position: top center !important;
+}
+
+/* Invisible clickable areas stay invisible */
+.cover-hotspots .hotspot,
+.cover-hotspots .hotspot:hover,
+.cover-hotspots .hotspot:focus,
+.cover-hotspots .hotspot:focus-visible,
+.cover-hotspots .hotspot:active {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    color: transparent !important;
+}
