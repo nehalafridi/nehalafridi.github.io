@@ -5027,46 +5027,46 @@ main > .section > .section-container {
    MOBILE IS NOT TOUCHED
    ========================================================= */
 
+/* =========================================================
+   DESKTOP COVER — SHOW THE COMPLETE COVER
+   ========================================================= */
+
 @media (min-width: 801px) {
 
-    /* Keep the professional navigation visible */
-    .site-nav {
-        position: fixed;
-        top: 0;
-        left: 0;
+    .cover-section {
         width: 100%;
-        z-index: 1000;
+        height: auto;
+        min-height: 0;
+        margin-top: 76px;
+        overflow: visible;
+        background: #000;
     }
 
-    /*
-       The cover image contains its own navigation at the top.
-       Move the image upward so that only the actual Home
-       content is visible below the professional navigation.
-    */
-
-    .home-section {
-        height: auto !important;
-        min-height: 0 !important;
-        overflow: visible !important;
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-
-    .cover-stage {
-        width: 100%;
-        height: auto !important;
-        overflow: visible !important;
+    .cover-wrapper {
         position: relative;
+        width: 100%;
+        height: auto;
+        overflow: visible;
     }
 
-    .cover-image {
+    .cover-picture {
         display: block;
         width: 100%;
-        height: auto !important;
-        max-width: none;
-        transform: none;
-        margin-bottom: 0;
+        height: auto;
+        line-height: 0;
     }
+
+    .cover-picture .cover-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        object-fit: contain;
+        pointer-events: none;
+        user-select: none;
+    }
+
+}
 
     /* Don't show the old invisible navigation hotspots */
     .nav-home,
