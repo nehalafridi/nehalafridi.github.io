@@ -5022,3 +5022,74 @@ main > .section > .section-container {
         padding: 0 !important;
     }
 }
+/* =========================================================
+   DESKTOP ONLY — REMOVE DUPLICATE NAVIGATION FROM COVER
+   MOBILE IS NOT TOUCHED
+   ========================================================= */
+
+@media (min-width: 801px) {
+
+    /* Keep the professional navigation visible */
+    .site-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    /*
+       The cover image contains its own navigation at the top.
+       Move the image upward so that only the actual Home
+       content is visible below the professional navigation.
+    */
+
+    .home-section {
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: hidden;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .cover-stage {
+        width: 100%;
+        height: auto !important;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .cover-image {
+        display: block;
+        width: 100%;
+        height: auto !important;
+        max-width: none;
+        transform: translateY(-7.5%);
+        margin-bottom: -7.5%;
+    }
+
+    /* Don't show the old invisible navigation hotspots */
+    .nav-home,
+    .nav-about,
+    .nav-education,
+    .nav-skills,
+    .nav-projects,
+    .nav-certificates,
+    .nav-contact {
+        display: none !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE — KEEP EXISTING DESIGN EXACTLY AS IT IS
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .cover-image {
+        transform: none !important;
+        margin-bottom: 0 !important;
+    }
+
+}
