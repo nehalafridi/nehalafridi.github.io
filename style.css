@@ -1639,3 +1639,38 @@ footer {
         padding-top: 25px !important;
     }
 }
+/* =========================================================
+   DESKTOP ONLY — KEEP NAVIGATION VISIBLE
+   Mobile version is NOT affected
+   ========================================================= */
+
+@media (min-width: 801px) {
+
+    .navbar,
+    .site-header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+
+        transform: translateY(0) !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+
+        z-index: 99999 !important;
+    }
+
+    html {
+        scroll-padding-top: 90px !important;
+    }
+
+    main > section {
+        scroll-margin-top: 90px !important;
+    }
+
+    .navbar.visible,
+    .site-header.visible {
+        transform: translateY(0) !important;
+    }
+}
